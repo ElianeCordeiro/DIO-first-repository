@@ -1,0 +1,55 @@
+  		INTRODUÇÃO AO GIT E GITHUB
+
+
+Comandos no Windows (Prompt de Comando/ Terminal Windows) = Ações feitas
+
+cd = change directory: te direciona para pastas específicas (cd <file>)
+cd .. = retorna níveis de diretórios
+dir = directory: lista todas as pastas e arquivos [ls em sistemas UNIX]
+mkdir = make directory : criar pasta/repositório
+del = deleta (del <file>)
+rmdir = apaga o repositório (rmdir <repository>)
+arrow up (tecla) = ver os últimos comandos realizados no terminal
+cls = clear screen [ctrl + l em sistemas UNIX]
+
+Obs.: <> indica que é o nome do file/ directory que tem que ser colocado (não colocar entre <>)
+
+
+		FUNCIONAMENTO DO GIT
+
+SHA1 Secure Hash Algotithm: algoritmo de encriptação, output com 40 dígitos, esses caracteres é a identificação de um file;
+se houver qualquer alteração no rascunho original é criado outro SHA1, se outra alteração for feita para retornar à original 
+o SHA1 gerado é o mesmo do primeiro rascunho.
+
+Objetos do GIT:
+
+- BLOBS é um objeto que guarda arquivo e metadados; nele contêm o tipo de arquivo (Blob), o tamanho da string, o SHA1 e o conteúdo do file.
+- TREES armazena os Blobs, também contém metadados, guarda o nome do arquivo além do SHA1, do tamanho elas ainda apontam para Blobs ou outras árvores;
+Se um arquivofor alterado no Blobs, seu SHA é alterado e o metadado da Tree também.
+- COMMIT junta tudo, da sentido para as alterações feitas, aponta para Tree, parente, autor, mensagem e timestamp; também possue SHA1, qualquer alteração 
+feita, afeta o blob, a árvore e o commit. O commit é único para cada autor!
+
+Authenticação:
+
+Chave SSH e Token: Forma de estabelecer uma coneção segura e encriptada entre duas máquinas; são duas chaves SSH, uma públia e outra privada.
+
+
+		COMANDOS NO GIT BASH
+
+- Usar ctrl + l para clear screen
+- Listar com dir ou ls
+- git init para inicar o git num repositório 
+- git status = mostra a classificação dos arquivos (tracked ou untracked) e onde estão [untracked: files que o git não tem conhecimento/ trackedo Git sabe deles,
+podem ser unmodified (não modificados) ou modified (modificados) ou staged (onde fica os arquivos que estão sendo preparados para fazer parte de outro tipo de grupo.
+- mv <de> ./ <para> = mover repositório
+- git add file/repository = mover repositório para staged
+- git add * = move todos os modified para staged
+- git commit -m "mensagem" = comita arquivo
+
+
+		AMBIENTE DE DESENVOLVIMENTO
+
+Working directory  -->   Staging area   --> Local repository
+                git add              git commit -m
+
+Remote repository é o GitHub
